@@ -3,7 +3,7 @@
 
 if [ $# -eq 0 ]; then
   echo "Usage: git-clone-work <repository-url> [directory]"
-  echo "Example: git-clone-work TLSingh0/work-repo"
+  echo "Example: git-clone-work GQuX/work-repo"
   exit 1
 fi
 

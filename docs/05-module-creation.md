@@ -250,7 +250,7 @@ System module (requires sudo):
 
 {
   virtualisation.docker.enable = true;
-  users.users.tai.extraGroups = [ "docker" ];
+  users.users.icarus.extraGroups = [ "docker" ];
 }
 ```
 
@@ -276,10 +276,10 @@ Home module (user-level):
 
 ```bash
 # Test build with module
-nix build .#homeConfigurations.tai.activationPackage
+nix build .#homeConfigurations.icarus.activationPackage
 
 # Check module evaluation
-nix eval .#homeConfigurations.tai.config.home.packages
+nix eval .#homeConfigurations.icarus.config.home.packages
 
 # Isolated module test
 nix repl

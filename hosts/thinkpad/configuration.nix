@@ -18,7 +18,7 @@
   # Use stable kernel (for NVIDIA driver compatibility)
   boot.kernelPackages = pkgs.linuxPackages;
 
-  networking.hostName = "my-nixos";
+  networking.hostName = "thinkpad";
   networking.networkmanager.enable = true;
 
   # Time zone
@@ -94,9 +94,9 @@
   security.pam.services.sudo.fprintAuth = true;
 
   # Define a user account
-  users.users.tai = {
+  users.users.icarus = {
     isNormalUser = true;
-    description = "tai";
+    description = "icarus";
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.fish;
   };
@@ -121,7 +121,7 @@
   programs._1password.enable = true;
   
   # Allow 1Password to be unlocked with system authentication
-  programs._1password-gui.polkitPolicyOwners = [ "tai" ];
+  programs._1password-gui.polkitPolicyOwners = [ "icarus" ];
 
   # System packages
   environment.systemPackages = with pkgs; [

@@ -51,7 +51,7 @@
     
     # Generate personal SSH key if it doesn't exist
     if [[ ! -f ~/.ssh/id_rsa_personal ]]; then
-      $DRY_RUN_CMD ${pkgs.openssh}/bin/ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_personal -C "tai8910@gmail.com" -N ""
+      $DRY_RUN_CMD ${pkgs.openssh}/bin/ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_personal -C "github.gqux@gmail.com" -N ""
       $DRY_RUN_CMD chmod 600 ~/.ssh/id_rsa_personal
       $DRY_RUN_CMD chmod 644 ~/.ssh/id_rsa_personal.pub
       echo "Generated personal SSH key at ~/.ssh/id_rsa_personal"
@@ -61,7 +61,7 @@
     
     # Generate work SSH key if it doesn't exist
     if [[ ! -f ~/.ssh/id_rsa_work ]]; then
-      $DRY_RUN_CMD ${pkgs.openssh}/bin/ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_work -C "tai@streamex.com" -N ""
+      $DRY_RUN_CMD ${pkgs.openssh}/bin/ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_work -C "github.gqux@gmail.com" -N ""
       $DRY_RUN_CMD chmod 600 ~/.ssh/id_rsa_work
       $DRY_RUN_CMD chmod 644 ~/.ssh/id_rsa_work.pub
       echo "Generated work SSH key at ~/.ssh/id_rsa_work"

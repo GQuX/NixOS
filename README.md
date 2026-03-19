@@ -34,13 +34,13 @@ nix flake update
 ├── flake.nix           # Entry point - defines all hosts
 ├── flake.lock          # Pinned dependencies
 ├── hosts/              # Host-specific configurations
-│   └── my-nixos/       # Per-machine settings
+│   └── thinkpad/       # Per-machine settings
 ├── modules/            # Reusable configuration modules
 │   ├── wm/            # Window managers
 │   ├── gui/           # GUI applications
 │   └── tui/           # Terminal applications
 ├── home/              # User configurations
-│   └── tai/           # Per-user settings
+│   └── icarus/           # Per-user settings
 └── docs/              # Documentation
 ```
 
@@ -67,7 +67,7 @@ nix flake update
 ├── flake.nix           # Main flake configuration
 ├── flake.lock          # Flake lock file
 ├── hosts/              # Host-specific configurations
-│   └── my-nixos/       # Configuration for "my-nixos" host
+│   └── thinkpad/       # Configuration for "thinkpad" host
 │       ├── configuration.nix
 │       └── hardware-configuration.nix
 ├── modules/            # Reusable modules
@@ -85,7 +85,7 @@ nix flake update
 │       ├── git/       # Git configuration
 │       └── starship/  # Shell prompt
 └── home/              # User-specific configurations
-    └── tai/           # Configuration for user "tai"
+    └── icarus/           # Configuration for user "icarus"
         └── home.nix   # Home-manager configuration
 ```
 
@@ -96,7 +96,7 @@ nix flake update
 To build and switch to the configuration:
 
 ```bash
-sudo nixos-rebuild switch --flake .#my-nixos
+sudo nixos-rebuild switch --flake .#thinkpad
 ```
 
 Or let it auto-detect your hostname:

@@ -8,8 +8,8 @@
 }: let
   hostname = osConfig.networking.hostName or "unknown";
 in {
-  home.username = "tai";
-  home.homeDirectory = "/home/tai";
+  home.username = "icarus";
+  home.homeDirectory = "/home/icarus";
 
   imports =
     [
@@ -22,7 +22,7 @@ in {
       ../../modules/tui/fish
       ../../modules/tui/whisper
     ]
-    ++ lib.optionals (hostname == "my-nixos") [
+    ++ lib.optionals (hostname == "thinkpad") [
       # Personal laptop modules
       ../../modules/wm/hyprland/home.nix
       ../../modules/wm/ags

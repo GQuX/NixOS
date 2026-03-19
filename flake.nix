@@ -42,20 +42,20 @@
     ...
   }: {
     nixosConfigurations = {
-      my-nixos = nixpkgs.lib.nixosSystem {
+      thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ({pkgs, ...}: {
             nixpkgs.overlays = [(import ./overlays)];
           })
-          ./hosts/my-nixos/configuration.nix
+          ./hosts/thinkpad/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.users.tai = import ./home/tai/home.nix;
+            home-manager.users.icarus = import ./home/icarus/home.nix;
           }
         ];
       };

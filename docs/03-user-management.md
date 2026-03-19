@@ -43,7 +43,7 @@ home-manager.users.USERNAME = import ./home/USERNAME/home.nix;
 
 # For multiple users:
 home-manager.users = {
-  tai = import ./home/tai/home.nix;
+  icarus = import ./home/icarus/home.nix;
   spouse = import ./home/spouse/home.nix;
   kid = import ./home/kid/home.nix;
 };
@@ -157,7 +157,7 @@ imports = [
 ### Structure
 ```
 home/
-├── tai/home.nix
+├── icarus/home.nix
 ├── spouse/home.nix
 └── shared/
     ├── base.nix      # Common for all users
@@ -179,7 +179,7 @@ home/
   };
 }
 
-# home/tai/home.nix
+# home/icarus/home.nix
 imports = [
   ../shared/base.nix  # Include shared config
   # ... other modules

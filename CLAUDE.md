@@ -55,9 +55,9 @@ nix search nixpkgs <package-name>
 
 - `flake.nix` - Main entry point defining hosts, inputs, and system configurations
 - `hosts/` - Host-specific configurations
-  - `my-nixos/` - Primary host configuration
+  - `thinkpad/` - Primary host configuration
 - `home/` - User configurations
-  - `tai/home.nix` - Main user config that conditionally imports modules based on hostname
+  - `icarus/home.nix` - Main user config that conditionally imports modules based on hostname
 - `modules/` - Reusable configuration modules
   - `wm/` - Window manager modules (Hyprland, AGS, Quickshell)
   - `gui/` - GUI application modules
@@ -67,7 +67,7 @@ nix search nixpkgs <package-name>
 
 ### Module System
 
-Modules are organized by type and imported conditionally in `home/tai/home.nix` based on the current hostname. This allows different configurations for different machines while sharing common modules.
+Modules are organized by type and imported conditionally in `home/icarus/home.nix` based on the current hostname. This allows different configurations for different machines while sharing common modules.
 
 Example module structure:
 
@@ -81,25 +81,25 @@ Example module structure:
 ### Adding New Modules
 
 1. Create module file in appropriate directory (`modules/gui/`, `modules/tui/`, etc.)
-2. Import in `home/tai/home.nix` within the appropriate hostname condition
+2. Import in `home/icarus/home.nix` within the appropriate hostname condition
 3. Rebuild system with `sudo nixos-rebuild switch --flake .`
 
 ### Key Configuration Files
 
 - `flake.nix` - Defines inputs, outputs, and nixosConfigurations
-- `hosts/my-nixos/configuration.nix` - System-level settings (hardware, networking, services)
-- `home/tai/home.nix` - User environment configuration with conditional module imports
+- `hosts/thinkpad/configuration.nix` - System-level settings (hardware, networking, services)
+- `home/icarus/home.nix` - User environment configuration with conditional module imports
 - `modules/*/default.nix` - Individual application/service configurations
 
 ## Important Patterns
 
 ### Conditional Module Loading
 
-Modules are loaded based on hostname in `home/tai/home.nix`:
+Modules are loaded based on hostname in `home/icarus/home.nix`:
 
 ```nix
 imports =
-  if hostname == "my-nixos" then [
+  if hostname == "thinkpad" then [
     # Desktop modules
   ] else if hostname == "laptop" then [
     # Laptop modules

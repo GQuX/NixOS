@@ -31,7 +31,7 @@ sudo nixos-generate-config --show-hardware-config > hosts/HOSTNAME/hardware-conf
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
-  users.users.tai = {
+  users.users.icarus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
   };
@@ -52,7 +52,7 @@ HOSTNAME = nixpkgs.lib.nixosSystem {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = { inherit inputs; };
-      home-manager.users.tai = import ./home/tai/home.nix;
+      home-manager.users.icarus = import ./home/icarus/home.nix;
     }
   ];
 };
@@ -72,7 +72,7 @@ sudo nixos-rebuild switch --flake .#HOSTNAME
 class "flake.nix" {
   nixosConfigurations
   --
-  my-nixos : NixOS Config
+  thinkpad : NixOS Config
   nixos-desktop : NixOS Config
   server : NixOS Config
 }
@@ -89,7 +89,7 @@ class "Host Config" {
 class "home.nix" {
   conditional imports
   --
-  if (hostname == "my-nixos")
+  if (hostname == "thinkpad")
   if (hostname == "desktop")
   if (hostname == "server")
 }

@@ -4,8 +4,8 @@ This configuration supports using multiple GitHub accounts with SSH authenticati
 
 ## Accounts Configured
 
-- **Personal**: TLSingh1 with tai8910@gmail.com (DEFAULT)
-- **Work**: TLSingh0 with tai@streamex.com
+- **Personal**: GQuX with github.gqux@gmail.com (DEFAULT)
+- **Work**: GQuX with github.gqux@gmail.com
 
 ## Setup Process
 
@@ -21,13 +21,13 @@ rebuild  # This will generate SSH keys automatically
 
 The system will automatically generate SSH keys and display them. You need to add these to your respective GitHub accounts:
 
-#### Personal Account (TLSingh1)
+#### Personal Account (GQuX)
 1. Copy the content of `~/.ssh/id_rsa_personal.pub`
 2. Go to GitHub.com → Settings → SSH and GPG keys
 3. Click "New SSH key"
 4. Add the public key
 
-#### Work Account (TLSingh0)
+#### Work Account (GQuX)
 1. Copy the content of `~/.ssh/id_rsa_work.pub`
 2. Go to GitHub.com → Settings → SSH and GPG keys (on work account)
 3. Click "New SSH key"  
@@ -43,7 +43,7 @@ ssh-test-personal
 ssh-test-work
 ```
 
-You should see messages like "Hi TLSingh1! You've successfully authenticated..."
+You should see messages like "Hi GQuX! You've successfully authenticated..."
 
 ## Usage
 
@@ -52,33 +52,33 @@ You should see messages like "Hi TLSingh1! You've successfully authenticated..."
 #### Personal Repositories (Default)
 ```bash
 # Using helper command
-gcp TLSingh1/my-personal-repo
+gcp GQuX/my-personal-repo
 
 # Or manually
-git clone git@github-personal:TLSingh1/my-personal-repo.git
+git clone git@github-personal:GQuX/my-personal-repo.git
 ```
 
 #### Work Repositories  
 ```bash
 # Using helper command
-gcw TLSingh0/work-repo
+gcw GQuX/work-repo
 
 # Or manually
-git clone git@github-work:TLSingh0/work-repo.git
+git clone git@github-work:GQuX/work-repo.git
 ```
 
 ### Directory-Based Configuration
 
 #### Personal Projects (DEFAULT - Everywhere)
 By default, git will use your personal account everywhere:
-- Name: TLSingh1
-- Email: tai8910@gmail.com
+- Name: GQuX
+- Email: github.gqux@gmail.com
 - SSH Key: ~/.ssh/id_rsa_personal
 
 #### Work Projects (Streamex Only)
 Only in the `~/Code/projects/streamex/` directory, git will automatically switch to:
-- Name: TLSingh0  
-- Email: tai@streamex.com
+- Name: GQuX  
+- Email: github.gqux@gmail.com
 - SSH Key: ~/.ssh/id_rsa_work
 
 ### Converting Existing Repositories
@@ -86,10 +86,10 @@ Only in the `~/Code/projects/streamex/` directory, git will automatically switch
 #### From HTTPS to SSH
 ```bash
 # For personal repos
-git remote set-url origin git@github-personal:TLSingh1/repo-name.git
+git remote set-url origin git@github-personal:GQuX/repo-name.git
 
 # For work repos
-git remote set-url origin git@github-work:TLSingh0/repo-name.git
+git remote set-url origin git@github-work:GQuX/repo-name.git
 ```
 
 ### Available Aliases
@@ -150,10 +150,10 @@ If git is using the wrong account:
 git remote -v
 
 # Fix remote URL for personal repo
-git remote set-url origin git@github-personal:TLSingh1/repo-name.git
+git remote set-url origin git@github-personal:GQuX/repo-name.git
 
 # Fix remote URL for work repo  
-git remote set-url origin git@github-work:TLSingh0/repo-name.git
+git remote set-url origin git@github-work:GQuX/repo-name.git
 ```
 
 ## How SSH + GitHub Multi-Account Setup Works
@@ -200,13 +200,13 @@ When you clone a repository, the remote URL determines which SSH configuration i
 
 ```bash
 # Uses github-personal SSH config (personal key)
-git clone git@github-personal:TLSingh1/my-repo.git
+git clone git@github-personal:GQuX/my-repo.git
 
 # Uses github-work SSH config (work key)  
-git clone git@github-work:TLSingh0/work-repo.git
+git clone git@github-work:GQuX/work-repo.git
 
 # Uses default github.com SSH config (personal key)
-git clone git@github.com:TLSingh1/my-repo.git
+git clone git@github.com:GQuX/my-repo.git
 ```
 
 ### Directory-Based Git Configuration
@@ -216,8 +216,8 @@ Git supports conditional configuration using `includeIf`. Our setup:
 ```gitconfig
 # ~/.gitconfig (managed by home-manager)
 [user]
-    name = TLSingh1
-    email = tai8910@gmail.com
+    name = GQuX
+    email = github.gqux@gmail.com
 [core]  
     sshCommand = ssh -i ~/.ssh/id_rsa_personal
 
@@ -230,8 +230,8 @@ When you're in `~/Code/projects/streamex/`, Git automatically includes the work 
 ```gitconfig
 # ~/.config/git/work
 [user]
-    name = TLSingh0
-    email = tai@streamex.com
+    name = GQuX
+    email = github.gqux@gmail.com
 [core]
     sshCommand = ssh -i ~/.ssh/id_rsa_work
 ```
@@ -257,10 +257,10 @@ The configuration includes URL rewriting to automatically convert HTTPS URLs:
 
 ```gitconfig
 [url "git@github-personal:"]
-    insteadOf = https://github.com/TLSingh1/
+    insteadOf = https://github.com/GQuX/
 
 [url "git@github-work:"]  
-    insteadOf = https://github.com/TLSingh0/
+    insteadOf = https://github.com/GQuX/
 ```
 
 This means if you accidentally use HTTPS URLs, they'll be automatically converted to SSH with the correct key.

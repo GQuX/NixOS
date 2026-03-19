@@ -28,7 +28,7 @@ package "Repository Structure" {
   [flake.nix] as flake
   
   package "hosts/" {
-    [my-nixos/] as host1
+    [thinkpad/] as host1
     [nixos-desktop/] as host2
   }
   
@@ -39,7 +39,7 @@ package "Repository Structure" {
   }
   
   package "home/" {
-    [tai/home.nix] as home
+    [icarus/home.nix] as home
   }
 }
 

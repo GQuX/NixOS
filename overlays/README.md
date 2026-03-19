@@ -72,5 +72,5 @@ programs.firefox.profiles.default.extensions = with pkgs.firefox-addons; [
 ## Tips
 
 - Use `nix-prefetch-url` or `nix-prefetch-github` to get sha256 hashes
-- Test overlays with: `nix build .#nixosConfigurations.my-nixos.config.system.build.toplevel`
+- Test overlays with: `nix build .#nixosConfigurations.thinkpad.config.system.build.toplevel`
 - Check if a package exists: `nix search nixpkgs package-name`
