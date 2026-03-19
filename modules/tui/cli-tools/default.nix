@@ -33,7 +33,6 @@
     # Development tools
     rustc
     cargo
-    claude-code
     ccusage
     gh
     meson

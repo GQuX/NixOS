@@ -11,8 +11,7 @@ in {
   home.username = "icarus";
   home.homeDirectory = "/home/icarus";
 
-  imports =
-    [
+  imports = [
       # Core modules - always loaded on all hosts
       ../../modules/tui/cli-tools
       ../../modules/tui/git
@@ -33,7 +32,6 @@ in {
       ../../modules/gui/apps
       ../../modules/gui/zen-browser
       ../../modules/gui/1password
-      ../../modules/gui/claude-desktop
       ../../modules/gui/vesktop
       ../../modules/tui/ghostty
       ../../modules/tui/tmux
@@ -47,7 +45,6 @@ in {
       ../../modules/gui/apps
       ../../modules/gui/zen-browser
       ../../modules/gui/1password
-      ../../modules/gui/claude-desktop
       ../../modules/gui/vesktop
       ../../modules/tui/ghostty
       ../../modules/tui/tmux
@@ -62,7 +59,6 @@ in {
       ../../modules/tui/kitty
       ../../modules/gui/apps
       ../../modules/gui/zen-browser
-      ../../modules/gui/claude-desktop
       ../../modules/tui/ghostty
       # Work-specific modules:
       # ../../modules/gui/slack

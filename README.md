@@ -2,6 +2,8 @@
 
 This repository contains a modular NixOS configuration that supports multiple hosts and separates concerns into logical modules.
 
+Forked from: https://github.com/TLSingh1/dotfiles
+
 ## Documentation
 
 See the [docs/](docs/) directory for complete documentation:
@@ -17,7 +19,7 @@ See the [docs/](docs/) directory for complete documentation:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/dotfiles ~/.dotfiles
+git clone https://github.com/GQuX/NixOS ~/.dotfiles
 cd ~/.dotfiles
 
 # Build and switch to configuration
